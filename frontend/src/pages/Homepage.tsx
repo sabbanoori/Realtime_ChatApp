@@ -24,7 +24,7 @@ interface ChatMessage {
   createdAt: string;
 }
 
-const socket: Socket = io("http://localhost:3000", {
+const socket: Socket = io(import.meta.env.VITE_API_URL, {
   withCredentials: true,
   transports: ["websocket", "polling"],
 });

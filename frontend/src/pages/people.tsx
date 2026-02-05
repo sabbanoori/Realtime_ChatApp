@@ -3,7 +3,7 @@ import { io, Socket } from "socket.io-client";
 import { useAuthStore } from "../store/authStore";
 
 // Initialize socket connection
-const socket: Socket = io("http://localhost:3000", { 
+const socket: Socket = io(import.meta.env.VITE_API_URL, { 
   withCredentials: true,
   transports: ["websocket", "polling"]
 });
