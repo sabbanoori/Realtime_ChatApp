@@ -24,7 +24,7 @@ interface ChatMessage {
   createdAt: string;
 }
 
-const socket: Socket = io(import.meta.env.VITE_API_URL, {
+const socket: Socket = io("https://chatapp-backend-production-c98d.up.railway.app", {
   withCredentials: true,
   transports: ["websocket", "polling"],
 });
