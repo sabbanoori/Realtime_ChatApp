@@ -3,7 +3,7 @@ import { io, Socket } from "socket.io-client";
 import { useAuthStore } from "../store/authStore";
 
 // Initialize socket connection
-const socket: Socket = io("https://localhost:3000", { 
+const socket: Socket = io("https://backendchatapp-production-2a9d.up.railway.app", { 
   withCredentials: true,
   transports: ["websocket", "polling"]
 });

@@ -24,7 +24,7 @@ interface ChatMessage {
   createdAt: string;
 }
 
-const socket: Socket = io("https://localhost:3000", {
+const socket: Socket = io("https://backendchatapp-production-2a9d.up.railway.app", {
   withCredentials: true,
   transports: ["websocket", "polling"],
 });
