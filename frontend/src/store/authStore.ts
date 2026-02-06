@@ -132,7 +132,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   logout: async () => {
     set({ isloggedout: true });
     try {
-      await api.post("/logout");
+      api.post("/logout");
       toast.success("Logout successfully");
       set({ AuthUser: null });
     } catch (error) {
