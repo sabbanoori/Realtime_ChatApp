@@ -139,7 +139,6 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       return Promise.resolve();
     } catch (error) {
       console.log(error);
-      toast.error("Logout failed");
     } finally {
       set({ isloggedout: false });
     }
