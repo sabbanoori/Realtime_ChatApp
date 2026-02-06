@@ -200,12 +200,7 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="flex items-center gap-5">
-                <button className="btn btn-ghost btn-sm btn-circle">
-                  <Phone size={20} />
-                </button>
-                <button className="btn btn-ghost btn-sm btn-circle">
-                  <Video size={20} />
-                </button>
+
                 
                 <div className="relative">
                   <button 

@@ -46,48 +46,8 @@ const Profilepage = () => {
           <p className="text-xl font-bold text-primary">Profile</p>
           <p className="text-gray-500">Your profile information</p>
 
-          <div className="flex justify-center mt-5">
-            <div className="relative w-36 sm:w-40">
-              <img
-                src={
-                  typeof pic_temp === "string"
-                    ? pic_temp
-                    : AuthUser?.profile_pic || "/default.png"
-                }
-                alt="Profile"
-                className="object-cover border-4 border-primary w-full aspect-square rounded-full p-1"
-              />
-              <label
-                htmlFor="profile-upload"
-                className={`absolute bottom-2 right-2 p-2 rounded-full bg-primary text-white hover:bg-primary-focus text-lg cursor-pointer shadow-md transition-all ${
-                  isprofileupdating
-                    ? "animate-pulse pointer-events-none bg-gray-400"
-                    : ""
-                }`}
-              >
-                <CiCamera />
-              </label>
 
-              <input
-                id="profile-upload"
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleImageChange}
-                ref={fileInputRef}
-              />
-            </div>
-          </div>
-
-          {isprofileupdating ? (
-            <p className="mt-2 text-xs animate-pulse text-gray-400">
-              Uploading...
-            </p>
-          ) : (
-            <p className="mt-2 text-xs text-gray-400">
-              Click the camera icon to change profile picture.
-            </p>
-          )}
+        
         </div>
 
         <div className="text-sm w-full sm:w-[80%] mx-auto text-start">
