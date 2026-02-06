@@ -120,6 +120,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       const res = await api.post<User>("/login", data);
       toast.success("Successfully Logged in!");
       set({ AuthUser: res.data });
+      return Promise.resolve();
     } catch (error) {
       const axiosError = error as AxiosError<ApiErrorResponse>;
       toast.error(axiosError.response?.data?.message || "Login failed");
@@ -132,11 +133,13 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   logout: async () => {
     set({ isloggedout: true });
     try {
-      api.post("/logout");
+      await api.post("/logout");
       toast.success("Logout successfully");
       set({ AuthUser: null });
+      return Promise.resolve();
     } catch (error) {
       console.log(error);
+      toast.error("Logout failed");
     } finally {
       set({ isloggedout: false });
     }
