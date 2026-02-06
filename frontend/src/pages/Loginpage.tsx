@@ -10,7 +10,7 @@ interface LoginDataType {
 }
 
 const Loginpage: React.FC = () => {
-  const { login, isLoginIn } = ();
+  const { login, isLoginIn } = useAuthStore();
   const navigate = useNavigate();
 
   const [showpass, setShowpass] = useState<boolean>(false);
